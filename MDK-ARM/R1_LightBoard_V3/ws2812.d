@@ -1,30 +1,42 @@
-r1_lightboard_v3/ws2812.o: ..\Project\WS2812\WS2812.c \
-  ..\Project\WS2812\WS2812.h ..\Core\Inc\tim.h ..\Core\Inc\main.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal.h \
-  ..\Core\Inc\stm32g4xx_hal_conf.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_rcc.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_def.h \
-  ..\Drivers\CMSIS\Device\ST\STM32G4xx\Include\stm32g4xx.h \
-  ..\Drivers\CMSIS\Device\ST\STM32G4xx\Include\stm32g474xx.h \
-  ..\Drivers\CMSIS\Include\core_cm4.h \
-  ..\Drivers\CMSIS\Device\ST\STM32G4xx\Include\system_stm32g4xx.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_rcc_ex.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_gpio.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_gpio_ex.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_dma.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_dma_ex.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_cortex.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_exti.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_fdcan.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_flash.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_flash_ex.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_flash_ramfunc.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_pwr.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_pwr_ex.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_tim.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_tim_ex.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_uart.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_uart_ex.h \
-  ..\Project\Color\Color.h ..\Project\HeartBeat\HeartBeat.h \
-  ..\Project\FDcan_bsp\FDcan_bsp.h ..\Core\Inc\fdcan.h
+r1_lightboard_v3\ws2812.o: ..\Project\WS2812\WS2812.c
+r1_lightboard_v3\ws2812.o: ..\Project\WS2812\WS2812.h
+r1_lightboard_v3\ws2812.o: ../Core/Inc/tim.h
+r1_lightboard_v3\ws2812.o: ../Core/Inc/main.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h
+r1_lightboard_v3\ws2812.o: ../Core/Inc/stm32g4xx_hal_conf.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_def.h
+r1_lightboard_v3\ws2812.o: ../Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h
+r1_lightboard_v3\ws2812.o: ../Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g474xx.h
+r1_lightboard_v3\ws2812.o: ../Drivers/CMSIS/Include/core_cm4.h
+r1_lightboard_v3\ws2812.o: C:\Users\liuch\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+r1_lightboard_v3\ws2812.o: ../Drivers/CMSIS/Include/cmsis_version.h
+r1_lightboard_v3\ws2812.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+r1_lightboard_v3\ws2812.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+r1_lightboard_v3\ws2812.o: ../Drivers/CMSIS/Include/mpu_armv7.h
+r1_lightboard_v3\ws2812.o: ../Drivers/CMSIS/Device/ST/STM32G4xx/Include/system_stm32g4xx.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+r1_lightboard_v3\ws2812.o: C:\Users\liuch\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc_ex.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio_ex.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_dma.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_dma_ex.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_cortex.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_exti.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_fdcan.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ex.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ramfunc.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim_ex.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h
+r1_lightboard_v3\ws2812.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h
+r1_lightboard_v3\ws2812.o: C:\Users\liuch\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+r1_lightboard_v3\ws2812.o: ..\Project\Color\Color.h
+r1_lightboard_v3\ws2812.o: ..\Project\HeartBeat\HeartBeat.h
+r1_lightboard_v3\ws2812.o: ..\Project\FDcan_bsp\FDcan_bsp.h
+r1_lightboard_v3\ws2812.o: ../Core/Inc/fdcan.h

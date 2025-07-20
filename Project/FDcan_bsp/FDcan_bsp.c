@@ -63,22 +63,16 @@ uint8_t FDCAN2_Init(FDCAN_HandleTypeDef *hfdcan)
     RXFilter.FilterConfig = FDCAN_FILTER_TO_RXFIFO0;
 
     RXFilter.FilterIndex = 0;
-    RXFilter.FilterID1 = VISION_CANID;
-    RXFilter.FilterID2 = 0x7FF;
-    if (HAL_FDCAN_ConfigFilter(hfdcan, &RXFilter) != HAL_OK)
-        return 2;
-
-    RXFilter.FilterIndex = 1;
-    RXFilter.FilterID1 = CHASSIS_CANID;
-    RXFilter.FilterID2 = 0x7FF;
+    RXFilter.FilterID1 = 0x101;
+    RXFilter.FilterID2 = 0x7F0;  // Mask to allow IDs from 0x101 to 0x110
     if (HAL_FDCAN_ConfigFilter(hfdcan, &RXFilter) != HAL_OK)
         return 2;
 
     if (HAL_FDCAN_ConfigGlobalFilter(hfdcan,
                                      FDCAN_REJECT,
                                      FDCAN_REJECT,
-                                     DISABLE,
-                                     DISABLE) != HAL_OK)
+                                     FDCAN_REJECT_REMOTE,
+                                     FDCAN_REJECT_REMOTE) != HAL_OK)
     {
         Error_Handler();
     }
@@ -107,22 +101,16 @@ uint8_t FDCAN3_Init(FDCAN_HandleTypeDef *hfdcan)
     RXFilter.FilterConfig = FDCAN_FILTER_TO_RXFIFO1;
 
     RXFilter.FilterIndex = 0;
-    RXFilter.FilterID1 = DRIBBLE_CANID;
-    RXFilter.FilterID2 = 0x7FF;
-    if (HAL_FDCAN_ConfigFilter(hfdcan, &RXFilter) != HAL_OK)
-        return 2;
-
-    RXFilter.FilterIndex = 1;
-    RXFilter.FilterID1 = PUSHSHOT_CANID;
-    RXFilter.FilterID2 = 0x7FF;
+    RXFilter.FilterID1 = 0x101;
+    RXFilter.FilterID2 = 0x7F0;  // Mask to allow IDs from 0x101 to 0x110
     if (HAL_FDCAN_ConfigFilter(hfdcan, &RXFilter) != HAL_OK)
         return 2;
 
     if (HAL_FDCAN_ConfigGlobalFilter(hfdcan,
                                      FDCAN_REJECT,
                                      FDCAN_REJECT,
-                                     DISABLE,
-                                     DISABLE) != HAL_OK)
+                                     FDCAN_REJECT_REMOTE,
+                                     FDCAN_REJECT_REMOTE) != HAL_OK)
     {
         Error_Handler();
     }

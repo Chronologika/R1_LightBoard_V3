@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "heartbeat.h": "c",
-        "ws2812.h": "c"
+        "ws2812.h": "c",
+        "key_bsp.h": "c",
+        "tim.h": "c",
+        "color.h": "c"
     }
 }

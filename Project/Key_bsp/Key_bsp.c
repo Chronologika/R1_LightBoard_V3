@@ -302,9 +302,9 @@ uint8_t CHALLENGE_BEGIN(void)
 }
 uint8_t RESERVED1_BEGIN(void)
 {
-	return FDCAN_SendData(&hfdcan3, TxMessage, 0x60, 1);
+	return FDCAN_SendData(&hfdcan2, TxMessage, 0x60, 1);
 }
 uint8_t RESERVED2_BEGIN(void)
 {
-	return FDCAN_SendData(&hfdcan3, TxMessage, 0x70, 1);
+	return FDCAN_SendData(&hfdcan2, TxMessage, 0x70, 1);
 }

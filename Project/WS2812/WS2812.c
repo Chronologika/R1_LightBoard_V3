@@ -4,6 +4,8 @@ uint32_t Send_Buffer[24 * LED_number + 50] = {0};
 uint8_t High_CRR = 112;
 uint8_t Low_CRR = 56;
 uint8_t Button_IDLE[6] = {1, 1, 1, 1, 1, 1};
+uint8_t flowing_index = 0;
+int8_t flowing_direction = 1;
 
 void WS2812_Set_Single_Color(uint16_t led_index, uint8_t R, uint8_t G, uint8_t B, float brightness)
 {
@@ -64,33 +66,41 @@ void WS2812_DisPlay_HeartBeat_Error(void)
 	// --- BTN_OFFENSIVE ---
 	if (Button_IDLE[0])
 	{
-		if (HeartBeat_Error_Flags & 0x01)
+		for (uint8_t i = 0; i <= 3; i++)
 		{
-			uint8_t color = Spark_Number ? COLOR_RED : COLOR_BLACK;
-			uint8_t leds[] = {1, 2, 3, 7, 8, 9};
-
-			for (int i = 0; i < sizeof(leds) / sizeof(leds[0]); i++)
-			{
-				WS2812_Set_Single_Color(
-					leds[i],
-					Color_Table[color].R,
-					Color_Table[color].G,
-					Color_Table[color].B,
-					0.1);
-			}
+			if (Event_Flag[i] == 1)
+				HeartBeat_Display = 0;
 		}
-		else
+		if (HeartBeat_Display == 1)
 		{
-			uint8_t leds[] = {1, 2, 3, 7, 8, 9};
-
-			for (int i = 0; i < sizeof(leds) / sizeof(leds[0]); i++)
+			if (HeartBeat_Error_Flags & 0x01)
 			{
-				WS2812_Set_Single_Color(
-					leds[i],
-					Color_Table[COLOR_GREEN].R,
-					Color_Table[COLOR_GREEN].G,
-					Color_Table[COLOR_GREEN].B,
-					0.1);
+				uint8_t color = Spark_Number ? COLOR_RED : COLOR_BLACK;
+				uint8_t leds[] = {1, 2, 3, 7, 8, 9};
+
+				for (int i = 0; i < sizeof(leds) / sizeof(leds[0]); i++)
+				{
+					WS2812_Set_Single_Color(
+						leds[i],
+						Color_Table[color].R,
+						Color_Table[color].G,
+						Color_Table[color].B,
+						0.1);
+				}
+			}
+			else
+			{
+				uint8_t leds[] = {1, 2, 3, 7, 8, 9};
+
+				for (int i = 0; i < sizeof(leds) / sizeof(leds[0]); i++)
+				{
+					WS2812_Set_Single_Color(
+						leds[i],
+						Color_Table[COLOR_GREEN].R,
+						Color_Table[COLOR_GREEN].G,
+						Color_Table[COLOR_GREEN].B,
+						0.1);
+				}
 			}
 		}
 	}
@@ -98,33 +108,41 @@ void WS2812_DisPlay_HeartBeat_Error(void)
 	// --- BTN_DEFENSIVE ---
 	if (Button_IDLE[1])
 	{
-		if (HeartBeat_Error_Flags & 0x02)
+		for (uint8_t i = 0; i <= 3; i++)
 		{
-			uint8_t color = Spark_Number ? COLOR_RED : COLOR_BLACK;
-			uint8_t leds[] = {4, 5, 6, 10, 11, 12};
-
-			for (int i = 0; i < sizeof(leds) / sizeof(leds[0]); i++)
-			{
-				WS2812_Set_Single_Color(
-					leds[i],
-					Color_Table[color].R,
-					Color_Table[color].G,
-					Color_Table[color].B,
-					0.1);
-			}
+			if (Event_Flag[i] == 1)
+				HeartBeat_Display = 0;
 		}
-		else
+		if (HeartBeat_Display == 1)
 		{
-			uint8_t leds[] = {4, 5, 6, 10, 11, 12};
-
-			for (int i = 0; i < sizeof(leds) / sizeof(leds[0]); i++)
+			if (HeartBeat_Error_Flags & 0x02)
 			{
-				WS2812_Set_Single_Color(
-					leds[i],
-					Color_Table[COLOR_GREEN].R,
-					Color_Table[COLOR_GREEN].G,
-					Color_Table[COLOR_GREEN].B,
-					0.1);
+				uint8_t color = Spark_Number ? COLOR_RED : COLOR_BLACK;
+				uint8_t leds[] = {4, 5, 6, 10, 11, 12};
+
+				for (int i = 0; i < sizeof(leds) / sizeof(leds[0]); i++)
+				{
+					WS2812_Set_Single_Color(
+						leds[i],
+						Color_Table[color].R,
+						Color_Table[color].G,
+						Color_Table[color].B,
+						0.1);
+				}
+			}
+			else
+			{
+				uint8_t leds[] = {4, 5, 6, 10, 11, 12};
+
+				for (int i = 0; i < sizeof(leds) / sizeof(leds[0]); i++)
+				{
+					WS2812_Set_Single_Color(
+						leds[i],
+						Color_Table[COLOR_GREEN].R,
+						Color_Table[COLOR_GREEN].G,
+						Color_Table[COLOR_GREEN].B,
+						0.1);
+				}
 			}
 		}
 	}
@@ -132,33 +150,41 @@ void WS2812_DisPlay_HeartBeat_Error(void)
 	// --- BTN_SELF_TEST ---
 	if (Button_IDLE[2])
 	{
-		if (HeartBeat_Error_Flags & 0x04)
+		for (uint8_t i = 0; i <= 3; i++)
 		{
-			uint8_t color = Spark_Number ? COLOR_RED : COLOR_BLACK;
-			uint8_t leds[] = {13, 14, 15, 19, 20, 21};
-
-			for (int i = 0; i < sizeof(leds) / sizeof(leds[0]); i++)
-			{
-				WS2812_Set_Single_Color(
-					leds[i],
-					Color_Table[color].R,
-					Color_Table[color].G,
-					Color_Table[color].B,
-					0.1);
-			}
+			if (Event_Flag[i] == 1)
+				HeartBeat_Display = 0;
 		}
-		else
+		if (HeartBeat_Display == 1)
 		{
-			uint8_t leds[] = {13, 14, 15, 19, 20, 21};
-
-			for (int i = 0; i < sizeof(leds) / sizeof(leds[0]); i++)
+			if (HeartBeat_Error_Flags & 0x04)
 			{
-				WS2812_Set_Single_Color(
-					leds[i],
-					Color_Table[COLOR_GREEN].R,
-					Color_Table[COLOR_GREEN].G,
-					Color_Table[COLOR_GREEN].B,
-					0.1);
+				uint8_t color = Spark_Number ? COLOR_RED : COLOR_BLACK;
+				uint8_t leds[] = {13, 14, 15, 19, 20, 21};
+
+				for (int i = 0; i < sizeof(leds) / sizeof(leds[0]); i++)
+				{
+					WS2812_Set_Single_Color(
+						leds[i],
+						Color_Table[color].R,
+						Color_Table[color].G,
+						Color_Table[color].B,
+						0.1);
+				}
+			}
+			else
+			{
+				uint8_t leds[] = {13, 14, 15, 19, 20, 21};
+
+				for (int i = 0; i < sizeof(leds) / sizeof(leds[0]); i++)
+				{
+					WS2812_Set_Single_Color(
+						leds[i],
+						Color_Table[COLOR_GREEN].R,
+						Color_Table[COLOR_GREEN].G,
+						Color_Table[COLOR_GREEN].B,
+						0.1);
+				}
 			}
 		}
 	}
@@ -166,34 +192,130 @@ void WS2812_DisPlay_HeartBeat_Error(void)
 	// --- BTN_CHALLENGE ---
 	if (Button_IDLE[3])
 	{
-		if (HeartBeat_Error_Flags & 0x08)
+		for (uint8_t i = 0; i <= 3; i++)
 		{
-			uint8_t color = Spark_Number ? COLOR_RED : COLOR_BLACK;
-			uint8_t leds[] = {16, 17, 18, 22, 23, 24, 25};
-
-			for (int i = 0; i < sizeof(leds) / sizeof(leds[0]); i++)
+			if (Event_Flag[i] == 1)
+				HeartBeat_Display = 0;
+		}
+		if (HeartBeat_Display == 1)
+		{
+			if (HeartBeat_Error_Flags & 0x08)
 			{
-				WS2812_Set_Single_Color(
-					leds[i],
-					Color_Table[color].R,
-					Color_Table[color].G,
-					Color_Table[color].B,
-					0.1);
+				uint8_t color = Spark_Number ? COLOR_RED : COLOR_BLACK;
+				uint8_t leds[] = {16, 17, 18, 22, 23, 24, 25};
+
+				for (int i = 0; i < sizeof(leds) / sizeof(leds[0]); i++)
+				{
+					WS2812_Set_Single_Color(
+						leds[i],
+						Color_Table[color].R,
+						Color_Table[color].G,
+						Color_Table[color].B,
+						0.1);
+				}
+			}
+			else
+			{
+				uint8_t leds[] = {16, 17, 18, 22, 23, 24};
+
+				for (int i = 0; i < sizeof(leds) / sizeof(leds[0]); i++)
+				{
+					WS2812_Set_Single_Color(
+						leds[i],
+						Color_Table[COLOR_GREEN].R,
+						Color_Table[COLOR_GREEN].G,
+						Color_Table[COLOR_GREEN].B,
+						0.1);
+				}
 			}
 		}
-		else
-		{
-			uint8_t leds[] = {16, 17, 18, 22, 23, 24};
+	}
+}
 
-			for (int i = 0; i < sizeof(leds) / sizeof(leds[0]); i++)
-			{
-				WS2812_Set_Single_Color(
-					leds[i],
-					Color_Table[COLOR_GREEN].R,
-					Color_Table[COLOR_GREEN].G,
-					Color_Table[COLOR_GREEN].B,
-					0.1);
-			}
+void WS2812_Display_Now_Event(void)
+{
+	int8_t Now_Event = -1;
+	for (uint8_t i = 0; i <= 3; i++)
+	{
+		if (Event_Flag[i] == 1)
+		{
+			Now_Event = i;
+			break;
 		}
+		if (i == 3)
+		{
+			return;
+		}
+	}
+	for (uint8_t i = 0; i <= 3; i++)
+	{
+		if (Button_IDLE[i] == 0)
+		{
+			return;
+		}
+	}
+	switch (Now_Event)
+	{
+	case 0:
+		for (uint8_t i = 0; i < LED_number; i++)
+        {
+            WS2812_Set_Single_Color(i, 0, 0, 0, 0.0f);
+        }
+
+        WS2812_Set_Single_Color(
+            flowing_index,
+            Color_Table[COLOR_GREEN].R,
+            Color_Table[COLOR_GREEN].G,
+            Color_Table[COLOR_GREEN].B,
+            0.1f);
+
+        flowing_index += flowing_direction;
+
+        if (flowing_index == LED_number - 1 || flowing_index == 0)
+        {
+            flowing_direction = -flowing_direction; 
+        }
+		break;
+	case 1:
+		uint8_t leds[] = {16, 17, 18, 22, 23, 24};
+
+		for (int i = 0; i < sizeof(leds) / sizeof(leds[0]); i++)
+		{
+			WS2812_Set_Single_Color(
+				leds[i],
+				Color_Table[COLOR_GREEN].R,
+				Color_Table[COLOR_GREEN].G,
+				Color_Table[COLOR_GREEN].B,
+				0.1);
+		}
+		break;
+	case 2:
+		uint8_t leds[] = {16, 17, 18, 22, 23, 24};
+
+		for (int i = 0; i < sizeof(leds) / sizeof(leds[0]); i++)
+		{
+			WS2812_Set_Single_Color(
+				leds[i],
+				Color_Table[COLOR_GREEN].R,
+				Color_Table[COLOR_GREEN].G,
+				Color_Table[COLOR_GREEN].B,
+				0.1);
+		}
+		break;
+	case 3:
+		uint8_t leds[] = {16, 17, 18, 22, 23, 24};
+
+		for (int i = 0; i < sizeof(leds) / sizeof(leds[0]); i++)
+		{
+			WS2812_Set_Single_Color(
+				leds[i],
+				Color_Table[COLOR_GREEN].R,
+				Color_Table[COLOR_GREEN].G,
+				Color_Table[COLOR_GREEN].B,
+				0.1);
+		}
+		break;
+	default:
+		break;
 	}
 }
