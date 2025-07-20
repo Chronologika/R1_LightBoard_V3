@@ -21,7 +21,7 @@ void Check_HeartBeat_Timeout(void)
     }
     if (USER_sysTick - Last_Status_Switch_Time > 1200)
     {
-        Event_Flag[3] = 0;Event_Flag[4] = 0;
+        Event_Flag[2] = 0;Event_Flag[3] = 0;
     }
 }
 

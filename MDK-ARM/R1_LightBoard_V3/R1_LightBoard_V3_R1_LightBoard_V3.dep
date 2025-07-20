@@ -42,7 +42,7 @@ I (../Core/Inc/tim.h)(0x6879190E)
 I (../Core/Inc/usart.h)(0x6879190E)
 I (../Core/Inc/gpio.h)(0x6879190E)
 I (..\Project\Key_bsp\Key_bsp.h)(0x6879190F)
-I (..\Project\WS2812\WS2812.h)(0x6879190F)
+I (..\Project\WS2812\WS2812.h)(0x687D1362)
 I (..\Project\Color\Color.h)(0x687CD4F0)
 I (..\Project\HeartBeat\HeartBeat.h)(0x687CD2E0)
 I (..\Project\FDcan_bsp\FDcan_bsp.h)(0x6879190F)
@@ -926,7 +926,7 @@ I (../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h)(0x6879190F)
 I (../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h)(0x6879190F)
 F (..\Project\Key_bsp\Key_bsp.c)(0x687CB53A)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include -I ..\Project\Color -I ..\Project\FDcan_bsp -I ..\Project\HeartBeat -I ..\Project\Key_bsp -I ..\Project\WS2812-I.\RTE\_R1_LightBoard_V3-IC:\Users\liuch\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32G474xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G474xx-o r1_lightboard_v3\key_bsp.o --omf_browse r1_lightboard_v3\key_bsp.crf --depend r1_lightboard_v3\key_bsp.d)
 I (..\Project\Key_bsp\Key_bsp.h)(0x6879190F)
-I (..\Project\WS2812\WS2812.h)(0x6879190F)
+I (..\Project\WS2812\WS2812.h)(0x687D1362)
 I (../Core/Inc/tim.h)(0x6879190E)
 I (../Core/Inc/main.h)(0x6879190E)
 I (../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h)(0x6879190F)
@@ -967,8 +967,8 @@ I (..\Project\HeartBeat\HeartBeat.h)(0x687CD2E0)
 I (..\Project\FDcan_bsp\FDcan_bsp.h)(0x6879190F)
 I (../Core/Inc/fdcan.h)(0x6879190E)
 F (..\Project\Key_bsp\Key_bsp.h)(0x6879190F)()
-F (..\Project\WS2812\WS2812.c)(0x687CD464)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include -I ..\Project\Color -I ..\Project\FDcan_bsp -I ..\Project\HeartBeat -I ..\Project\Key_bsp -I ..\Project\WS2812-I.\RTE\_R1_LightBoard_V3-IC:\Users\liuch\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32G474xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G474xx-o r1_lightboard_v3\ws2812.o --omf_browse r1_lightboard_v3\ws2812.crf --depend r1_lightboard_v3\ws2812.d)
-I (..\Project\WS2812\WS2812.h)(0x6879190F)
+F (..\Project\WS2812\WS2812.c)(0x687D1A01)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include -I ..\Project\Color -I ..\Project\FDcan_bsp -I ..\Project\HeartBeat -I ..\Project\Key_bsp -I ..\Project\WS2812-I.\RTE\_R1_LightBoard_V3-IC:\Users\liuch\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32G474xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G474xx-o r1_lightboard_v3\ws2812.o --omf_browse r1_lightboard_v3\ws2812.crf --depend r1_lightboard_v3\ws2812.d)
+I (..\Project\WS2812\WS2812.h)(0x687D1362)
 I (../Core/Inc/tim.h)(0x6879190E)
 I (../Core/Inc/main.h)(0x6879190E)
 I (../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h)(0x6879190F)
@@ -1008,8 +1008,8 @@ I (..\Project\Color\Color.h)(0x687CD4F0)
 I (..\Project\HeartBeat\HeartBeat.h)(0x687CD2E0)
 I (..\Project\FDcan_bsp\FDcan_bsp.h)(0x6879190F)
 I (../Core/Inc/fdcan.h)(0x6879190E)
-F (..\Project\WS2812\WS2812.h)(0x6879190F)()
-F (..\Project\HeartBeat\HeartBeat.c)(0x687CDD50)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include -I ..\Project\Color -I ..\Project\FDcan_bsp -I ..\Project\HeartBeat -I ..\Project\Key_bsp -I ..\Project\WS2812-I.\RTE\_R1_LightBoard_V3-IC:\Users\liuch\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32G474xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G474xx-o r1_lightboard_v3\heartbeat.o --omf_browse r1_lightboard_v3\heartbeat.crf --depend r1_lightboard_v3\heartbeat.d)
+F (..\Project\WS2812\WS2812.h)(0x687D1362)()
+F (..\Project\HeartBeat\HeartBeat.c)(0x687D1937)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include -I ..\Project\Color -I ..\Project\FDcan_bsp -I ..\Project\HeartBeat -I ..\Project\Key_bsp -I ..\Project\WS2812-I.\RTE\_R1_LightBoard_V3-IC:\Users\liuch\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="542" -DSTM32G474xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G474xx-o r1_lightboard_v3\heartbeat.o --omf_browse r1_lightboard_v3\heartbeat.crf --depend r1_lightboard_v3\heartbeat.d)
 I (..\Project\HeartBeat\HeartBeat.h)(0x687CD2E0)
 I (..\Project\FDcan_bsp\FDcan_bsp.h)(0x6879190F)
 I (../Core/Inc/fdcan.h)(0x6879190E)

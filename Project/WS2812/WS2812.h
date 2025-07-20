@@ -5,6 +5,8 @@
 #include "Color.h"
 
 #define LED_number 25
+#define LED_ROWS 4
+#define LED_COLS 6
 
 extern uint32_t Send_Buffer[24 * LED_number + 50];
 extern uint8_t Button_IDLE[6];
@@ -14,5 +16,4 @@ void WS2812_Append_Reset(void);
 void WS2812_NewRound_Send(TIM_HandleTypeDef *htim, uint32_t TIM_CHANNEL);
 void WS2812_DisPlay_HeartBeat_Error(void);
 
-
-#endif 
+#endif
