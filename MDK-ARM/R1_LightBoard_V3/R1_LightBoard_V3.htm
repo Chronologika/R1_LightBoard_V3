@@ -3,7 +3,7 @@
 <title>Static Call Graph - [R1_LightBoard_V3\R1_LightBoard_V3.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image R1_LightBoard_V3\R1_LightBoard_V3.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Mon Jul 21 17:10:48 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Mon Jul 21 23:17:23 2025
 <BR><P>
 <H3>Maximum Stack Usage =        296 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -643,7 +643,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32g474xx.o(RESET)
 </UL>
 <P><STRONG><a name="[8e]"></a>Button_Function_Execute</STRONG> (Thumb, 364 bytes, Stack size 24 bytes, key_bsp.o(.text.Button_Function_Execute))
-<BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = Button_Function_Execute &rArr; WS2812_Set_Single_Color
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = Button_Function_Execute &rArr; WS2812_Set_Single_Color
 </UL>
 <BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WS2812_Set_Single_Color
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_GetState
@@ -1274,7 +1274,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[d4]"></a>HAL_TIM_IRQHandler</STRONG> (Thumb, 768 bytes, Stack size 24 bytes, stm32g4xx_hal_tim.o(.text.HAL_TIM_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 220<LI>Call Chain = HAL_TIM_IRQHandler &rArr; HAL_TIM_PeriodElapsedCallback &rArr; WS2812_DisPlay_HeartBeat_Error &rArr; Set_LED_Group_Color &rArr; WS2812_Set_Single_Color
+<BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = HAL_TIM_IRQHandler &rArr; HAL_TIM_PeriodElapsedCallback &rArr; WS2812_NewRound_Send &rArr; HAL_TIM_PWM_Start_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
 <LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_TransitionErrorCallback
@@ -1370,7 +1370,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[d8]"></a>HAL_TIM_PeriodElapsedCallback</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, main.o(.text.HAL_TIM_PeriodElapsedCallback))
-<BR><BR>[Stack]<UL><LI>Max Depth = 196<LI>Call Chain = HAL_TIM_PeriodElapsedCallback &rArr; WS2812_DisPlay_HeartBeat_Error &rArr; Set_LED_Group_Color &rArr; WS2812_Set_Single_Color
+<BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = HAL_TIM_PeriodElapsedCallback &rArr; WS2812_NewRound_Send &rArr; HAL_TIM_PWM_Start_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WS2812_NewRound_Send
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WS2812_DisPlay_HeartBeat_Error
@@ -1627,14 +1627,14 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32g474xx.o(.text)
 </UL>
 <P><STRONG><a name="[40]"></a>TIM6_DAC_IRQHandler</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, stm32g4xx_it.o(.text.TIM6_DAC_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 228<LI>Call Chain = TIM6_DAC_IRQHandler &rArr; HAL_TIM_IRQHandler &rArr; HAL_TIM_PeriodElapsedCallback &rArr; WS2812_DisPlay_HeartBeat_Error &rArr; Set_LED_Group_Color &rArr; WS2812_Set_Single_Color
+<BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = TIM6_DAC_IRQHandler &rArr; HAL_TIM_IRQHandler &rArr; HAL_TIM_PeriodElapsedCallback &rArr; WS2812_NewRound_Send &rArr; HAL_TIM_PWM_Start_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32g474xx.o(RESET)
 </UL>
 <P><STRONG><a name="[41]"></a>TIM7_DAC_IRQHandler</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, stm32g4xx_it.o(.text.TIM7_DAC_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 228<LI>Call Chain = TIM7_DAC_IRQHandler &rArr; HAL_TIM_IRQHandler &rArr; HAL_TIM_PeriodElapsedCallback &rArr; WS2812_DisPlay_HeartBeat_Error &rArr; Set_LED_Group_Color &rArr; WS2812_Set_Single_Color
+<BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = TIM7_DAC_IRQHandler &rArr; HAL_TIM_IRQHandler &rArr; HAL_TIM_PeriodElapsedCallback &rArr; WS2812_NewRound_Send &rArr; HAL_TIM_PWM_Start_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
 </UL>
@@ -1725,7 +1725,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[f2]"></a>WS2812_DisPlay_HeartBeat_Error</STRONG> (Thumb, 588 bytes, Stack size 96 bytes, ws2812.o(.text.WS2812_DisPlay_HeartBeat_Error))
-<BR><BR>[Stack]<UL><LI>Max Depth = 180<LI>Call Chain = WS2812_DisPlay_HeartBeat_Error &rArr; Set_LED_Group_Color &rArr; WS2812_Set_Single_Color
+<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = WS2812_DisPlay_HeartBeat_Error &rArr; Set_LED_Group_Color &rArr; WS2812_Set_Single_Color
 </UL>
 <BR>[Calls]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_LED_Group_Color
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WS2812_Set_Single_Color
@@ -1733,8 +1733,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
 </UL>
 
-<P><STRONG><a name="[f1]"></a>WS2812_Display_Now_Event</STRONG> (Thumb, 600 bytes, Stack size 40 bytes, ws2812.o(.text.WS2812_Display_Now_Event))
-<BR><BR>[Stack]<UL><LI>Max Depth = 92<LI>Call Chain = WS2812_Display_Now_Event &rArr; WS2812_Set_Single_Color
+<P><STRONG><a name="[f1]"></a>WS2812_Display_Now_Event</STRONG> (Thumb, 728 bytes, Stack size 40 bytes, ws2812.o(.text.WS2812_Display_Now_Event))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = WS2812_Display_Now_Event &rArr; WS2812_Set_Single_Color
 </UL>
 <BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WS2812_Set_Single_Color
 </UL>
@@ -1751,8 +1751,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
 </UL>
 
-<P><STRONG><a name="[90]"></a>WS2812_Set_Single_Color</STRONG> (Thumb, 504 bytes, Stack size 52 bytes, ws2812.o(.text.WS2812_Set_Single_Color))
-<BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = WS2812_Set_Single_Color
+<P><STRONG><a name="[90]"></a>WS2812_Set_Single_Color</STRONG> (Thumb, 424 bytes, Stack size 40 bytes, ws2812.o(.text.WS2812_Set_Single_Color))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = WS2812_Set_Single_Color
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WS2812_DisPlay_HeartBeat_Error
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WS2812_Display_Now_Event
@@ -1939,7 +1939,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[109]"></a>Set_LED_Group_Color</STRONG> (Thumb, 110 bytes, Stack size 32 bytes, ws2812.o(.text.Set_LED_Group_Color))
-<BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = Set_LED_Group_Color &rArr; WS2812_Set_Single_Color
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = Set_LED_Group_Color &rArr; WS2812_Set_Single_Color
 </UL>
 <BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WS2812_Set_Single_Color
 </UL>

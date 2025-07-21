@@ -1,13 +1,17 @@
 #include "WS2812.h"
 
 uint32_t Send_Buffer[24 * LED_number + 50] = {0};
-uint8_t High_CRR = 112;
-uint8_t Low_CRR = 56;
+const uint8_t High_CRR = 112;
+const uint8_t Low_CRR = 56;
+const uint8_t Skill_LED_Hz = 10;
+const uint8_t SelfTest_LED_Hz = 30;
 uint8_t Button_IDLE[6] = {1, 1, 1, 1, 1, 1};
 uint8_t flowing_index = 0;
 uint8_t flowing_col_index = 0;
 int8_t flowing_direction = 1;
 int8_t flowing_col_direction = 1;
+uint64_t Last_Skill_LED_Refresh_Time = 0;
+uint64_t Last_SelfTest_LED_Refresh_Time = 0;
 
 void WS2812_Set_Single_Color(uint16_t led_index, uint8_t R, uint8_t G, uint8_t B, float brightness)
 {
@@ -113,18 +117,26 @@ void WS2812_Display_Now_Event(void)
     switch (Now_Event)
     {
     case 0:
+        if (USER_sysTick - Last_SelfTest_LED_Refresh_Time > 1000/SelfTest_LED_Hz)
+        {
         WS2812_Set_Single_Color(flowing_index, Color_Table[COLOR_GREEN].R, Color_Table[COLOR_GREEN].G, Color_Table[COLOR_GREEN].B, 0.1);
         flowing_index += flowing_direction;
         if (flowing_index == LED_number - 1 || flowing_index == 0)
             flowing_direction = -flowing_direction;
+            Last_SelfTest_LED_Refresh_Time = USER_sysTick;
+        }
         break;
 
     case 1:
+        if (USER_sysTick - Last_Skill_LED_Refresh_Time > 1000/Skill_LED_Hz)
+        {
         for (uint8_t i = flowing_col_index; i < LED_number; i += 6)
             WS2812_Set_Single_Color(i, Color_Table[COLOR_BLUE].R, Color_Table[COLOR_BLUE].G, Color_Table[COLOR_BLUE].B, 0.1);
         flowing_col_index += flowing_col_direction;
         if (flowing_col_index == LED_COLS - 1 || flowing_col_index == 0)
             flowing_col_direction = -flowing_col_direction;
+            Last_Skill_LED_Refresh_Time = USER_sysTick;
+        }
         break;
 
     case 2:
