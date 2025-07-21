@@ -3,7 +3,7 @@
 <title>Static Call Graph - [R1_LightBoard_V3\R1_LightBoard_V3.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image R1_LightBoard_V3\R1_LightBoard_V3.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Mon Jul 21 23:17:23 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Mon Jul 21 23:26:19 2025
 <BR><P>
 <H3>Maximum Stack Usage =        296 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1724,11 +1724,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WS2812_NewRound_Send
 </UL>
 
-<P><STRONG><a name="[f2]"></a>WS2812_DisPlay_HeartBeat_Error</STRONG> (Thumb, 588 bytes, Stack size 96 bytes, ws2812.o(.text.WS2812_DisPlay_HeartBeat_Error))
-<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = WS2812_DisPlay_HeartBeat_Error &rArr; Set_LED_Group_Color &rArr; WS2812_Set_Single_Color
+<P><STRONG><a name="[f2]"></a>WS2812_DisPlay_HeartBeat_Error</STRONG> (Thumb, 532 bytes, Stack size 88 bytes, ws2812.o(.text.WS2812_DisPlay_HeartBeat_Error))
+<BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = WS2812_DisPlay_HeartBeat_Error &rArr; Set_LED_Group_Color &rArr; WS2812_Set_Single_Color
 </UL>
 <BR>[Calls]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_LED_Group_Color
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WS2812_Set_Single_Color
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
 </UL>
@@ -1754,8 +1753,7 @@ Global Symbols
 <P><STRONG><a name="[90]"></a>WS2812_Set_Single_Color</STRONG> (Thumb, 424 bytes, Stack size 40 bytes, ws2812.o(.text.WS2812_Set_Single_Color))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = WS2812_Set_Single_Color
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WS2812_DisPlay_HeartBeat_Error
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WS2812_Display_Now_Event
+<BR>[Called By]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WS2812_Display_Now_Event
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_Function_Execute
 <LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_LED_Group_Color
 </UL>

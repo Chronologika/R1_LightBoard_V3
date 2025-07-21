@@ -57,11 +57,14 @@ static void Set_LED_Group_Color(const uint8_t *leds, uint8_t count, ColorName_t 
 
 void WS2812_DisPlay_HeartBeat_Error(void)
 {
-    if (HeartBeat_Error_Flags == 0)
+    HeartBeat_Display = 1;
+    for (uint8_t j = 0; j < 4; j++)
     {
-        for (int i = 0; i < LED_number; i++)
-            WS2812_Set_Single_Color(i, Color_Table[COLOR_GREEN].R, Color_Table[COLOR_GREEN].G, Color_Table[COLOR_GREEN].B, 0.1);
-        return;
+        if (Event_Flag[j])
+        {
+            HeartBeat_Display = 0;
+            break;
+        }
     }
 
     uint8_t Spark_Number = ((USER_sysTick & 0x1FF) > 256);
@@ -82,15 +85,18 @@ void WS2812_DisPlay_HeartBeat_Error(void)
     {
         if (!configs[i].button)
             continue;
-        for (uint8_t j = 0; j < 4; j++)
-            if (Event_Flag[j])
-                HeartBeat_Display = 0;
 
-        if (HeartBeat_Display)
-        {
-            ColorName_t color = (HeartBeat_Error_Flags & configs[i].flag) ? (Spark_Number ? COLOR_RED : COLOR_BLACK) : COLOR_GREEN;
-            Set_LED_Group_Color(configs[i].leds, configs[i].count, color, 0.1);
-        }
+        if (!HeartBeat_Display)
+            continue;
+
+        ColorName_t color;
+
+        if (HeartBeat_Error_Flags & configs[i].flag)
+            color = Spark_Number ? COLOR_RED : COLOR_BLACK;
+        else
+            color = COLOR_GREEN;
+
+        Set_LED_Group_Color(configs[i].leds, configs[i].count, color, 0.1);
     }
 }
 

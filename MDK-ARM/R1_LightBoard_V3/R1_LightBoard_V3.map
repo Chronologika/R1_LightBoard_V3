@@ -1336,13 +1336,11 @@ Section Cross References
     ws2812.o(.text.WS2812_NewRound_Send) refers to ws2812.o(.bss.Send_Buffer) for Send_Buffer
     ws2812.o(.text.WS2812_NewRound_Send) refers to stm32g4xx_hal_tim.o(.text.HAL_TIM_PWM_Start_DMA) for HAL_TIM_PWM_Start_DMA
     ws2812.o(.ARM.exidx.text.WS2812_NewRound_Send) refers to ws2812.o(.text.WS2812_NewRound_Send) for [Anonymous Symbol]
-    ws2812.o(.text.WS2812_DisPlay_HeartBeat_Error) refers to heartbeat.o(.bss.HeartBeat_Error_Flags) for HeartBeat_Error_Flags
-    ws2812.o(.text.WS2812_DisPlay_HeartBeat_Error) refers to color.o(.rodata.Color_Table) for Color_Table
-    ws2812.o(.text.WS2812_DisPlay_HeartBeat_Error) refers to ws2812.o(.text.WS2812_Set_Single_Color) for WS2812_Set_Single_Color
+    ws2812.o(.text.WS2812_DisPlay_HeartBeat_Error) refers to heartbeat.o(.data.HeartBeat_Display) for HeartBeat_Display
+    ws2812.o(.text.WS2812_DisPlay_HeartBeat_Error) refers to heartbeat.o(.bss.Event_Flag) for Event_Flag
     ws2812.o(.text.WS2812_DisPlay_HeartBeat_Error) refers to main.o(.bss.USER_sysTick) for USER_sysTick
     ws2812.o(.text.WS2812_DisPlay_HeartBeat_Error) refers to ws2812.o(.data.Button_IDLE) for Button_IDLE
-    ws2812.o(.text.WS2812_DisPlay_HeartBeat_Error) refers to heartbeat.o(.bss.Event_Flag) for Event_Flag
-    ws2812.o(.text.WS2812_DisPlay_HeartBeat_Error) refers to heartbeat.o(.data.HeartBeat_Display) for HeartBeat_Display
+    ws2812.o(.text.WS2812_DisPlay_HeartBeat_Error) refers to heartbeat.o(.bss.HeartBeat_Error_Flags) for HeartBeat_Error_Flags
     ws2812.o(.text.WS2812_DisPlay_HeartBeat_Error) refers to ws2812.o(.text.Set_LED_Group_Color) for Set_LED_Group_Color
     ws2812.o(.ARM.exidx.text.WS2812_DisPlay_HeartBeat_Error) refers to ws2812.o(.text.WS2812_DisPlay_HeartBeat_Error) for [Anonymous Symbol]
     ws2812.o(.text.Set_LED_Group_Color) refers to color.o(.rodata.Color_Table) for Color_Table
@@ -3012,29 +3010,29 @@ Image Symbol Table
     [Anonymous Symbol]                       0x0800741c   Section        0  stm32g4xx_it.o(.text.UsageFault_Handler)
     [Anonymous Symbol]                       0x08007420   Section        0  ws2812.o(.text.WS2812_Append_Reset)
     [Anonymous Symbol]                       0x08007454   Section        0  ws2812.o(.text.WS2812_DisPlay_HeartBeat_Error)
-    [Anonymous Symbol]                       0x080076a4   Section        0  ws2812.o(.text.WS2812_Display_Now_Event)
-    [Anonymous Symbol]                       0x08007984   Section        0  ws2812.o(.text.WS2812_NewRound_Send)
-    [Anonymous Symbol]                       0x080079b0   Section        0  ws2812.o(.text.WS2812_Set_Single_Color)
-    __NVIC_EnableIRQ                         0x08007b5d   Thumb Code    48  stm32g4xx_hal_cortex.o(.text.__NVIC_EnableIRQ)
-    [Anonymous Symbol]                       0x08007b5c   Section        0  stm32g4xx_hal_cortex.o(.text.__NVIC_EnableIRQ)
-    __NVIC_GetPriorityGrouping               0x08007b8d   Thumb Code    16  stm32g4xx_hal_cortex.o(.text.__NVIC_GetPriorityGrouping)
-    [Anonymous Symbol]                       0x08007b8c   Section        0  stm32g4xx_hal_cortex.o(.text.__NVIC_GetPriorityGrouping)
-    __NVIC_SetPriority                       0x08007b9d   Thumb Code    66  stm32g4xx_hal_cortex.o(.text.__NVIC_SetPriority)
-    [Anonymous Symbol]                       0x08007b9c   Section        0  stm32g4xx_hal_cortex.o(.text.__NVIC_SetPriority)
-    __NVIC_SetPriorityGrouping               0x08007be1   Thumb Code    60  stm32g4xx_hal_cortex.o(.text.__NVIC_SetPriorityGrouping)
-    [Anonymous Symbol]                       0x08007be0   Section        0  stm32g4xx_hal_cortex.o(.text.__NVIC_SetPriorityGrouping)
-    [Anonymous Symbol]                       0x08007c1c   Section        0  main.o(.text.main)
-    $v0                                      0x08007cce   Number         0  fpinit.o(x$fpl$fpinit)
-    x$fpl$fpinit                             0x08007cce   Section       26  fpinit.o(x$fpl$fpinit)
-    .L__const.Button_Init.ports              0x08007ce8   Data          24  key_bsp.o(.rodata..L__const.Button_Init.ports)
-    DLCtoBytes                               0x08007d54   Data          16  stm32g4xx_hal_fdcan.o(.rodata.DLCtoBytes)
-    [Anonymous Symbol]                       0x08007d54   Section        0  stm32g4xx_hal_fdcan.o(.rodata.DLCtoBytes)
-    UARTEx_SetNbDataToProcess.denominator    0x08007d64   Data           8  stm32g4xx_hal_uart_ex.o(.rodata.UARTEx_SetNbDataToProcess.denominator)
-    [Anonymous Symbol]                       0x08007d64   Section        0  stm32g4xx_hal_uart_ex.o(.rodata.UARTEx_SetNbDataToProcess.denominator)
-    UARTEx_SetNbDataToProcess.numerator      0x08007d6c   Data           8  stm32g4xx_hal_uart_ex.o(.rodata.UARTEx_SetNbDataToProcess.numerator)
-    [Anonymous Symbol]                       0x08007d6c   Section        0  stm32g4xx_hal_uart_ex.o(.rodata.UARTEx_SetNbDataToProcess.numerator)
-    buttonActions                            0x08007d8c   Data          96  key_bsp.o(.rodata.buttonActions)
-    [Anonymous Symbol]                       0x08007d8c   Section        0  key_bsp.o(.rodata.buttonActions)
+    [Anonymous Symbol]                       0x0800766c   Section        0  ws2812.o(.text.WS2812_Display_Now_Event)
+    [Anonymous Symbol]                       0x0800794c   Section        0  ws2812.o(.text.WS2812_NewRound_Send)
+    [Anonymous Symbol]                       0x08007978   Section        0  ws2812.o(.text.WS2812_Set_Single_Color)
+    __NVIC_EnableIRQ                         0x08007b25   Thumb Code    48  stm32g4xx_hal_cortex.o(.text.__NVIC_EnableIRQ)
+    [Anonymous Symbol]                       0x08007b24   Section        0  stm32g4xx_hal_cortex.o(.text.__NVIC_EnableIRQ)
+    __NVIC_GetPriorityGrouping               0x08007b55   Thumb Code    16  stm32g4xx_hal_cortex.o(.text.__NVIC_GetPriorityGrouping)
+    [Anonymous Symbol]                       0x08007b54   Section        0  stm32g4xx_hal_cortex.o(.text.__NVIC_GetPriorityGrouping)
+    __NVIC_SetPriority                       0x08007b65   Thumb Code    66  stm32g4xx_hal_cortex.o(.text.__NVIC_SetPriority)
+    [Anonymous Symbol]                       0x08007b64   Section        0  stm32g4xx_hal_cortex.o(.text.__NVIC_SetPriority)
+    __NVIC_SetPriorityGrouping               0x08007ba9   Thumb Code    60  stm32g4xx_hal_cortex.o(.text.__NVIC_SetPriorityGrouping)
+    [Anonymous Symbol]                       0x08007ba8   Section        0  stm32g4xx_hal_cortex.o(.text.__NVIC_SetPriorityGrouping)
+    [Anonymous Symbol]                       0x08007be4   Section        0  main.o(.text.main)
+    $v0                                      0x08007c96   Number         0  fpinit.o(x$fpl$fpinit)
+    x$fpl$fpinit                             0x08007c96   Section       26  fpinit.o(x$fpl$fpinit)
+    .L__const.Button_Init.ports              0x08007cb0   Data          24  key_bsp.o(.rodata..L__const.Button_Init.ports)
+    DLCtoBytes                               0x08007d1c   Data          16  stm32g4xx_hal_fdcan.o(.rodata.DLCtoBytes)
+    [Anonymous Symbol]                       0x08007d1c   Section        0  stm32g4xx_hal_fdcan.o(.rodata.DLCtoBytes)
+    UARTEx_SetNbDataToProcess.denominator    0x08007d2c   Data           8  stm32g4xx_hal_uart_ex.o(.rodata.UARTEx_SetNbDataToProcess.denominator)
+    [Anonymous Symbol]                       0x08007d2c   Section        0  stm32g4xx_hal_uart_ex.o(.rodata.UARTEx_SetNbDataToProcess.denominator)
+    UARTEx_SetNbDataToProcess.numerator      0x08007d34   Data           8  stm32g4xx_hal_uart_ex.o(.rodata.UARTEx_SetNbDataToProcess.numerator)
+    [Anonymous Symbol]                       0x08007d34   Section        0  stm32g4xx_hal_uart_ex.o(.rodata.UARTEx_SetNbDataToProcess.numerator)
+    buttonActions                            0x08007d54   Data          96  key_bsp.o(.rodata.buttonActions)
+    [Anonymous Symbol]                       0x08007d54   Section        0  key_bsp.o(.rodata.buttonActions)
     .compoundliteral                         0x20000000   Data           6  key_bsp.o(.data..compoundliteral)
     [Anonymous Symbol]                       0x20000000   Section        0  key_bsp.o(.data..compoundliteral)
     .compoundliteral.1                       0x20000006   Data           6  key_bsp.o(.data..compoundliteral.1)
@@ -3384,20 +3382,20 @@ Image Symbol Table
     UART_WaitOnFlagUntilTimeout              0x08007311   Thumb Code   268  stm32g4xx_hal_uart.o(.text.UART_WaitOnFlagUntilTimeout)
     UsageFault_Handler                       0x0800741d   Thumb Code     4  stm32g4xx_it.o(.text.UsageFault_Handler)
     WS2812_Append_Reset                      0x08007421   Thumb Code    50  ws2812.o(.text.WS2812_Append_Reset)
-    WS2812_DisPlay_HeartBeat_Error           0x08007455   Thumb Code   588  ws2812.o(.text.WS2812_DisPlay_HeartBeat_Error)
-    WS2812_Display_Now_Event                 0x080076a5   Thumb Code   728  ws2812.o(.text.WS2812_Display_Now_Event)
-    WS2812_NewRound_Send                     0x08007985   Thumb Code    44  ws2812.o(.text.WS2812_NewRound_Send)
-    WS2812_Set_Single_Color                  0x080079b1   Thumb Code   424  ws2812.o(.text.WS2812_Set_Single_Color)
-    main                                     0x08007c1d   Thumb Code   178  main.o(.text.main)
-    _fp_init                                 0x08007ccf   Thumb Code    26  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x08007ce7   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x08007ce7   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    AHBPrescTable                            0x08007d00   Data          16  system_stm32g4xx.o(.rodata.AHBPrescTable)
-    APBPrescTable                            0x08007d10   Data           8  system_stm32g4xx.o(.rodata.APBPrescTable)
-    Color_Table                              0x08007d18   Data          60  color.o(.rodata.Color_Table)
-    UARTPrescTable                           0x08007d74   Data          24  stm32g4xx_hal_uart.o(.rodata.UARTPrescTable)
-    Region$$Table$$Base                      0x08007dec   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08007e0c   Number         0  anon$$obj.o(Region$$Table)
+    WS2812_DisPlay_HeartBeat_Error           0x08007455   Thumb Code   532  ws2812.o(.text.WS2812_DisPlay_HeartBeat_Error)
+    WS2812_Display_Now_Event                 0x0800766d   Thumb Code   728  ws2812.o(.text.WS2812_Display_Now_Event)
+    WS2812_NewRound_Send                     0x0800794d   Thumb Code    44  ws2812.o(.text.WS2812_NewRound_Send)
+    WS2812_Set_Single_Color                  0x08007979   Thumb Code   424  ws2812.o(.text.WS2812_Set_Single_Color)
+    main                                     0x08007be5   Thumb Code   178  main.o(.text.main)
+    _fp_init                                 0x08007c97   Thumb Code    26  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x08007caf   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x08007caf   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    AHBPrescTable                            0x08007cc8   Data          16  system_stm32g4xx.o(.rodata.AHBPrescTable)
+    APBPrescTable                            0x08007cd8   Data           8  system_stm32g4xx.o(.rodata.APBPrescTable)
+    Color_Table                              0x08007ce0   Data          60  color.o(.rodata.Color_Table)
+    UARTPrescTable                           0x08007d3c   Data          24  stm32g4xx_hal_uart.o(.rodata.UARTPrescTable)
+    Region$$Table$$Base                      0x08007db4   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08007dd4   Number         0  anon$$obj.o(Region$$Table)
     Button_IDLE                              0x20000018   Data           6  ws2812.o(.data.Button_IDLE)
     HeartBeat_Display                        0x2000001e   Data           1  heartbeat.o(.data.HeartBeat_Display)
     SystemCoreClock                          0x20000020   Data           4  system_stm32g4xx.o(.data.SystemCoreClock)
@@ -3445,9 +3443,9 @@ Memory Map of the image
 
   Image Entry point : 0x080001d9
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00007e40, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00007e08, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00007e0c, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00007dd4, Max: 0x00080000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -3728,47 +3726,47 @@ Memory Map of the image
     0x0800741c   0x0800741c   0x00000004   Code   RO          118    .text.UsageFault_Handler  stm32g4xx_it.o
     0x08007420   0x08007420   0x00000032   Code   RO         1501    .text.WS2812_Append_Reset  ws2812.o
     0x08007452   0x08007452   0x00000002   PAD
-    0x08007454   0x08007454   0x00000250   Code   RO         1505    .text.WS2812_DisPlay_HeartBeat_Error  ws2812.o
-    0x080076a4   0x080076a4   0x000002e0   Code   RO         1509    .text.WS2812_Display_Now_Event  ws2812.o
-    0x08007984   0x08007984   0x0000002c   Code   RO         1503    .text.WS2812_NewRound_Send  ws2812.o
-    0x080079b0   0x080079b0   0x000001ac   Code   RO         1499    .text.WS2812_Set_Single_Color  ws2812.o
-    0x08007b5c   0x08007b5c   0x00000030   Code   RO          801    .text.__NVIC_EnableIRQ  stm32g4xx_hal_cortex.o
-    0x08007b8c   0x08007b8c   0x00000010   Code   RO          793    .text.__NVIC_GetPriorityGrouping  stm32g4xx_hal_cortex.o
-    0x08007b9c   0x08007b9c   0x00000042   Code   RO          795    .text.__NVIC_SetPriority  stm32g4xx_hal_cortex.o
-    0x08007bde   0x08007bde   0x00000002   PAD
-    0x08007be0   0x08007be0   0x0000003c   Code   RO          789    .text.__NVIC_SetPriorityGrouping  stm32g4xx_hal_cortex.o
-    0x08007c1c   0x08007c1c   0x000000b2   Code   RO           11    .text.main          main.o
-    0x08007cce   0x08007cce   0x0000001a   Code   RO         1693    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x08007ce8   0x08007ce8   0x00000018   Data   RO         1485    .rodata..L__const.Button_Init.ports  key_bsp.o
-    0x08007d00   0x08007d00   0x00000010   Data   RO         1454    .rodata.AHBPrescTable  system_stm32g4xx.o
-    0x08007d10   0x08007d10   0x00000008   Data   RO         1455    .rodata.APBPrescTable  system_stm32g4xx.o
-    0x08007d18   0x08007d18   0x0000003c   Data   RO         1546    .rodata.Color_Table  color.o
-    0x08007d54   0x08007d54   0x00000010   Data   RO          287    .rodata.DLCtoBytes  stm32g4xx_hal_fdcan.o
-    0x08007d64   0x08007d64   0x00000008   Data   RO         1441    .rodata.UARTEx_SetNbDataToProcess.denominator  stm32g4xx_hal_uart_ex.o
-    0x08007d6c   0x08007d6c   0x00000008   Data   RO         1440    .rodata.UARTEx_SetNbDataToProcess.numerator  stm32g4xx_hal_uart_ex.o
-    0x08007d74   0x08007d74   0x00000018   Data   RO         1396    .rodata.UARTPrescTable  stm32g4xx_hal_uart.o
-    0x08007d8c   0x08007d8c   0x00000060   Data   RO         1487    .rodata.buttonActions  key_bsp.o
-    0x08007dec   0x08007dec   0x00000020   Data   RO         1754    Region$$Table       anon$$obj.o
+    0x08007454   0x08007454   0x00000218   Code   RO         1505    .text.WS2812_DisPlay_HeartBeat_Error  ws2812.o
+    0x0800766c   0x0800766c   0x000002e0   Code   RO         1509    .text.WS2812_Display_Now_Event  ws2812.o
+    0x0800794c   0x0800794c   0x0000002c   Code   RO         1503    .text.WS2812_NewRound_Send  ws2812.o
+    0x08007978   0x08007978   0x000001ac   Code   RO         1499    .text.WS2812_Set_Single_Color  ws2812.o
+    0x08007b24   0x08007b24   0x00000030   Code   RO          801    .text.__NVIC_EnableIRQ  stm32g4xx_hal_cortex.o
+    0x08007b54   0x08007b54   0x00000010   Code   RO          793    .text.__NVIC_GetPriorityGrouping  stm32g4xx_hal_cortex.o
+    0x08007b64   0x08007b64   0x00000042   Code   RO          795    .text.__NVIC_SetPriority  stm32g4xx_hal_cortex.o
+    0x08007ba6   0x08007ba6   0x00000002   PAD
+    0x08007ba8   0x08007ba8   0x0000003c   Code   RO          789    .text.__NVIC_SetPriorityGrouping  stm32g4xx_hal_cortex.o
+    0x08007be4   0x08007be4   0x000000b2   Code   RO           11    .text.main          main.o
+    0x08007c96   0x08007c96   0x0000001a   Code   RO         1693    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x08007cb0   0x08007cb0   0x00000018   Data   RO         1485    .rodata..L__const.Button_Init.ports  key_bsp.o
+    0x08007cc8   0x08007cc8   0x00000010   Data   RO         1454    .rodata.AHBPrescTable  system_stm32g4xx.o
+    0x08007cd8   0x08007cd8   0x00000008   Data   RO         1455    .rodata.APBPrescTable  system_stm32g4xx.o
+    0x08007ce0   0x08007ce0   0x0000003c   Data   RO         1546    .rodata.Color_Table  color.o
+    0x08007d1c   0x08007d1c   0x00000010   Data   RO          287    .rodata.DLCtoBytes  stm32g4xx_hal_fdcan.o
+    0x08007d2c   0x08007d2c   0x00000008   Data   RO         1441    .rodata.UARTEx_SetNbDataToProcess.denominator  stm32g4xx_hal_uart_ex.o
+    0x08007d34   0x08007d34   0x00000008   Data   RO         1440    .rodata.UARTEx_SetNbDataToProcess.numerator  stm32g4xx_hal_uart_ex.o
+    0x08007d3c   0x08007d3c   0x00000018   Data   RO         1396    .rodata.UARTPrescTable  stm32g4xx_hal_uart.o
+    0x08007d54   0x08007d54   0x00000060   Data   RO         1487    .rodata.buttonActions  key_bsp.o
+    0x08007db4   0x08007db4   0x00000020   Data   RO         1754    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08007e10, Size: 0x00001658, Max: 0x00020000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08007dd8, Size: 0x00001658, Max: 0x00020000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08007e10   0x00000006   Data   RW         1488    .data..compoundliteral  key_bsp.o
-    0x20000006   0x08007e16   0x00000006   Data   RW         1489    .data..compoundliteral.1  key_bsp.o
-    0x2000000c   0x08007e1c   0x00000006   Data   RW         1490    .data..compoundliteral.2  key_bsp.o
-    0x20000012   0x08007e22   0x00000006   Data   RW         1491    .data..compoundliteral.3  key_bsp.o
-    0x20000018   0x08007e28   0x00000006   Data   RW         1516    .data.Button_IDLE   ws2812.o
-    0x2000001e   0x08007e2e   0x00000001   Data   RW         1538    .data.HeartBeat_Display  heartbeat.o
-    0x2000001f   0x08007e2f   0x00000001   PAD
-    0x20000020   0x08007e30   0x00000004   Data   RW         1453    .data.SystemCoreClock  system_stm32g4xx.o
-    0x20000024   0x08007e34   0x00000001   Data   RW         1483    .data.TxMessage     key_bsp.o
-    0x20000025   0x08007e35   0x00000001   Data   RW         1520    .data.flowing_col_direction  ws2812.o
-    0x20000026   0x08007e36   0x00000001   Data   RW         1519    .data.flowing_direction  ws2812.o
-    0x20000027   0x08007e37   0x00000001   PAD
-    0x20000028   0x08007e38   0x00000004   Data   RW          372    .data.uwTickFreq    stm32g4xx_hal.o
-    0x2000002c   0x08007e3c   0x00000004   Data   RW          371    .data.uwTickPrio    stm32g4xx_hal.o
+    0x20000000   0x08007dd8   0x00000006   Data   RW         1488    .data..compoundliteral  key_bsp.o
+    0x20000006   0x08007dde   0x00000006   Data   RW         1489    .data..compoundliteral.1  key_bsp.o
+    0x2000000c   0x08007de4   0x00000006   Data   RW         1490    .data..compoundliteral.2  key_bsp.o
+    0x20000012   0x08007dea   0x00000006   Data   RW         1491    .data..compoundliteral.3  key_bsp.o
+    0x20000018   0x08007df0   0x00000006   Data   RW         1516    .data.Button_IDLE   ws2812.o
+    0x2000001e   0x08007df6   0x00000001   Data   RW         1538    .data.HeartBeat_Display  heartbeat.o
+    0x2000001f   0x08007df7   0x00000001   PAD
+    0x20000020   0x08007df8   0x00000004   Data   RW         1453    .data.SystemCoreClock  system_stm32g4xx.o
+    0x20000024   0x08007dfc   0x00000001   Data   RW         1483    .data.TxMessage     key_bsp.o
+    0x20000025   0x08007dfd   0x00000001   Data   RW         1520    .data.flowing_col_direction  ws2812.o
+    0x20000026   0x08007dfe   0x00000001   Data   RW         1519    .data.flowing_direction  ws2812.o
+    0x20000027   0x08007dff   0x00000001   PAD
+    0x20000028   0x08007e00   0x00000004   Data   RW          372    .data.uwTickFreq    stm32g4xx_hal.o
+    0x2000002c   0x08007e04   0x00000004   Data   RW          371    .data.uwTickPrio    stm32g4xx_hal.o
     0x20000030        -       0x00000060   Zero   RW         1619    .bss                c_w.l(libspace.o)
     0x20000090        -       0x00000040   Zero   RW         1560    .bss.CAN1_RxData    fdcan_bsp.o
     0x200000d0        -       0x00000028   Zero   RW         1563    .bss.CAN1_RxMessage  fdcan_bsp.o
@@ -3779,7 +3777,7 @@ Memory Map of the image
     0x200001c8        -       0x00000004   Zero   RW         1536    .bss.Event_Flag     heartbeat.o
     0x200001cc        -       0x00000004   Zero   RW           61    .bss.HAL_RCC_FDCAN_CLK_ENABLED  fdcan.o
     0x200001d0        -       0x00000001   Zero   RW         1537    .bss.HeartBeat_Error_Flags  heartbeat.o
-    0x200001d1   0x08007e40   0x00000007   PAD
+    0x200001d1   0x08007e08   0x00000007   PAD
     0x200001d8        -       0x00000020   Zero   RW         1534    .bss.Last_HeartBeat_Time  heartbeat.o
     0x200001f8        -       0x00000008   Zero   RW         1522    .bss.Last_SelfTest_LED_Refresh_Time  ws2812.o
     0x20000200        -       0x00000008   Zero   RW         1521    .bss.Last_Skill_LED_Refresh_Time  ws2812.o
@@ -3789,7 +3787,7 @@ Memory Map of the image
     0x20000c40        -       0x00000060   Zero   RW         1484    .bss.buttons        key_bsp.o
     0x20000ca0        -       0x00000001   Zero   RW         1518    .bss.flowing_col_index  ws2812.o
     0x20000ca1        -       0x00000001   Zero   RW         1517    .bss.flowing_index  ws2812.o
-    0x20000ca2   0x08007e40   0x00000002   PAD
+    0x20000ca2   0x08007e08   0x00000002   PAD
     0x20000ca4        -       0x00000060   Zero   RW           87    .bss.hdma_tim2_ch1  tim.o
     0x20000d04        -       0x00000060   Zero   RW           88    .bss.hdma_tim5_ch2  tim.o
     0x20000d64        -       0x00000064   Zero   RW           58    .bss.hfdcan1        fdcan.o
@@ -3838,10 +3836,10 @@ Image component sizes
         18          0         24          4          0       2692   system_stm32g4xx.o
       1218          0          0          0        496      10436   tim.o
        308          0          0          0        148       6649   usart.o
-      1960         16          0          8       2618       7812   ws2812.o
+      1904         16          0          8       2618       7735   ws2812.o
 
     ----------------------------------------------------------------------
-     30834        224        764         48       5576     245081   Object Totals
+     30778        224        764         48       5576     245004   Object Totals
          0          0         32          0          0          0   (incl. Generated)
        124          0          0          2          9          0   (incl. Padding)
 
@@ -3894,15 +3892,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     31504        240        764         48       5672     245289   Grand Totals
-     31504        240        764         48       5672     245289   ELF Image Totals
-     31504        240        764         48          0          0   ROM Totals
+     31448        240        764         48       5672     245212   Grand Totals
+     31448        240        764         48       5672     245212   ELF Image Totals
+     31448        240        764         48          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                32268 (  31.51kB)
+    Total RO  Size (Code + RO Data)                32212 (  31.46kB)
     Total RW  Size (RW Data + ZI Data)              5720 (   5.59kB)
-    Total ROM Size (Code + RO Data + RW Data)      32316 (  31.56kB)
+    Total ROM Size (Code + RO Data + RW Data)      32260 (  31.50kB)
 
 ==============================================================================
 
