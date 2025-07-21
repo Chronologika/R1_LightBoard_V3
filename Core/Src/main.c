@@ -102,6 +102,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
 //	FDCAN1_Init(&hfdcan1);
   Button_Init();
+	FDCAN2_Init(&hfdcan2);
+	FDCAN3_Init(&hfdcan3);
 	__HAL_TIM_DISABLE_IT(&htim2, TIM_IT_UPDATE);
 	__HAL_TIM_DISABLE_IT(&htim2, TIM_IT_CC1);
   __HAL_TIM_DISABLE_IT(&htim5, TIM_IT_UPDATE);
@@ -178,6 +180,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   else if (htim->Instance == TIM6)
   {
     Check_HeartBeat_Timeout();
+    WS2812_Display_Now_Event();
     WS2812_DisPlay_HeartBeat_Error();
     WS2812_NewRound_Send(&htim2, TIM_CHANNEL_1);
   }

@@ -4,7 +4,7 @@ uint64_t Last_HeartBeat_Time[DEVICE_NUM] = {0};
 uint64_t Last_Status_Switch_Time = 0;
 uint8_t Event_Flag[4] = {0};
 uint8_t HeartBeat_Error_Flags = 0;
-uint8_t HeartBeat_Display = 0;
+uint8_t HeartBeat_Display = 1;
 
 void Check_HeartBeat_Timeout(void)
 {
@@ -68,7 +68,7 @@ void Refresh_HeartBeat_Time(FDCAN_HandleTypeDef *hfdcan)
             Event_Flag[2] = 1;
             Last_Status_Switch_Time = USER_sysTick;
             break;
-        case 0x110:
+        case 0x10A:
             Event_Flag[3] = 1;
             Last_Status_Switch_Time = USER_sysTick;
             break;

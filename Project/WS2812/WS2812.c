@@ -55,7 +55,7 @@ void WS2812_DisPlay_HeartBeat_Error(void)
 {
     if (HeartBeat_Error_Flags == 0)
     {
-        for (int i = 1; i <= LED_number; i++)
+        for (int i = 0; i < LED_number; i++)
             WS2812_Set_Single_Color(i, Color_Table[COLOR_GREEN].R, Color_Table[COLOR_GREEN].G, Color_Table[COLOR_GREEN].B, 0.1);
         return;
     }
