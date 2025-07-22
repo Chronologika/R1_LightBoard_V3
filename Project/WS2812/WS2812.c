@@ -6,8 +6,8 @@ const uint8_t Low_CRR = 56;
 const uint8_t Skill_LED_Hz = 10;
 const uint8_t SelfTest_LED_Hz = 30;
 uint8_t Button_IDLE[6] = {1, 1, 1, 1, 1, 1};
-uint8_t flowing_index = 0;
-uint8_t flowing_col_index = 0;
+uint8_t flowing_index = 1;
+uint8_t flowing_col_index = 1;
 int8_t flowing_direction = 1;
 int8_t flowing_col_direction = 1;
 uint64_t Last_Skill_LED_Refresh_Time = 0;
@@ -117,7 +117,7 @@ void WS2812_Display_Now_Event(void)
     if (Now_Event == -1)
         return;
 
-    for (uint8_t i = 0; i < LED_number; i++)
+    for (uint8_t i = 1; i <= LED_number; i++)
         WS2812_Set_Single_Color(i, 0, 0, 0, 0.0f);
 
     switch (Now_Event)
@@ -127,7 +127,7 @@ void WS2812_Display_Now_Event(void)
         {
         WS2812_Set_Single_Color(flowing_index, Color_Table[COLOR_GREEN].R, Color_Table[COLOR_GREEN].G, Color_Table[COLOR_GREEN].B, 0.1);
         flowing_index += flowing_direction;
-        if (flowing_index == LED_number - 1 || flowing_index == 0)
+        if (flowing_index == LED_number || flowing_index == 1)
             flowing_direction = -flowing_direction;
             Last_SelfTest_LED_Refresh_Time = USER_sysTick;
         }
@@ -136,10 +136,10 @@ void WS2812_Display_Now_Event(void)
     case 1:
         if (USER_sysTick - Last_Skill_LED_Refresh_Time > 1000/Skill_LED_Hz)
         {
-        for (uint8_t i = flowing_col_index; i < LED_number; i += 6)
+        for (uint8_t i = flowing_col_index; i <= LED_number; i += 6)
             WS2812_Set_Single_Color(i, Color_Table[COLOR_BLUE].R, Color_Table[COLOR_BLUE].G, Color_Table[COLOR_BLUE].B, 0.1);
         flowing_col_index += flowing_col_direction;
-        if (flowing_col_index == LED_COLS - 1 || flowing_col_index == 0)
+        if (flowing_col_index == LED_COLS || flowing_col_index == 1)
             flowing_col_direction = -flowing_col_direction;
             Last_Skill_LED_Refresh_Time = USER_sysTick;
         }
@@ -151,7 +151,7 @@ void WS2812_Display_Now_Event(void)
         uint16_t mask = Now_Event == 2 ? 0x3FF : 0x1FF;
         uint16_t threshold = Now_Event == 2 ? 512 : 256;
         ColorName_t color = ((USER_sysTick & mask) > threshold) ? (Now_Event == 2 ? COLOR_GREEN : COLOR_RED) : COLOR_BLACK;
-        for (int i = 0; i < LED_number; i++)
+        for (int i = 1; i <= LED_number; i++)
             WS2812_Set_Single_Color(i, Color_Table[color].R, Color_Table[color].G, Color_Table[color].B, 0.1);
         break;
     }

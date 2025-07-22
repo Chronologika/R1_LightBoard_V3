@@ -19,7 +19,7 @@ void Check_HeartBeat_Timeout(void)
             HeartBeat_Error_Flags &= ~(1 << i);
         }
     }
-    if (USER_sysTick - Last_Status_Switch_Time > 1200)
+    if (USER_sysTick - Last_Status_Switch_Time > 2000)
     {
         Event_Flag[2] = 0;Event_Flag[3] = 0;
     }

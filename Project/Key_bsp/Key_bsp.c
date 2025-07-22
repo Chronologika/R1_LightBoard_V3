@@ -80,10 +80,10 @@ static const struct
     size_t ledCount;
     ColorName_t color;
 } buttonActions[BTN_COUNT] = {
-    {OFFENSIVE_RESET, (uint8_t[]){0, 1, 2, 6, 7, 8}, 6, COLOR_YELLOW},
-    {DEFENSIVE_RESET, (uint8_t[]){3, 4, 5, 9, 10, 11}, 6, COLOR_YELLOW},
-    {SELF_TEST_BEGIN, (uint8_t[]){12, 13, 14, 18, 19, 20}, 6, COLOR_YELLOW},
-    {CHALLENGE_BEGIN, (uint8_t[]){15, 16, 17, 21, 22, 23}, 6, COLOR_YELLOW},
+    {OFFENSIVE_RESET, (uint8_t[]){1, 2, 3, 7, 8, 9}, 6, COLOR_YELLOW},
+    {DEFENSIVE_RESET, (uint8_t[]){4, 5, 6, 10, 11, 12}, 6, COLOR_YELLOW},
+    {SELF_TEST_BEGIN, (uint8_t[]){13, 14, 15, 19, 20, 21}, 6, COLOR_YELLOW},
+    {CHALLENGE_BEGIN, (uint8_t[]){16, 17, 18, 22, 23, 24}, 6, COLOR_YELLOW},
     {RESERVED1_BEGIN, NULL, 24, COLOR_YELLOW},
     {RESERVED2_BEGIN, NULL, 24, COLOR_BLUE},
 };
