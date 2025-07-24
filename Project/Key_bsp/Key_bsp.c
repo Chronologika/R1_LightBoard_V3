@@ -90,6 +90,15 @@ static const struct
 
 void Button_Function_Execute(void)
 {
+    float brightness = 0;
+    if (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_14) == GPIO_PIN_SET)
+    {
+        brightness = 0.07;
+    }
+    else if (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_14) == GPIO_PIN_RESET)
+    {
+        brightness = 0.5;
+    }
     for (int i = 0; i < BTN_COUNT; i++)
     {
         if (Button_GetState(i) == 1)
@@ -111,7 +120,7 @@ void Button_Function_Execute(void)
                                 Color_Table[buttonActions[i].color].R,
                                 Color_Table[buttonActions[i].color].G,
                                 Color_Table[buttonActions[i].color].B,
-                                0.1);
+                                brightness);
                         }
                     }
                     else
@@ -123,7 +132,7 @@ void Button_Function_Execute(void)
                                 Color_Table[buttonActions[i].color].R,
                                 Color_Table[buttonActions[i].color].G,
                                 Color_Table[buttonActions[i].color].B,
-                                0.1);
+                                brightness);
                         }
                     }
                 }
@@ -141,5 +150,6 @@ uint8_t OFFENSIVE_RESET(void) { return FDCAN_SendData(&hfdcan2, TxMessage, 0x20,
 uint8_t DEFENSIVE_RESET(void) { return FDCAN_SendData(&hfdcan2, TxMessage, 0x30, 1); }
 uint8_t SELF_TEST_BEGIN(void) { return FDCAN_SendData(&hfdcan2, TxMessage, 0x40, 1); }
 uint8_t CHALLENGE_BEGIN(void) { return FDCAN_SendData(&hfdcan2, TxMessage, 0x50, 1); }
-uint8_t RESERVED1_BEGIN(void) { return FDCAN_SendData(&hfdcan2, TxMessage, 0x60, 1); }
-uint8_t RESERVED2_BEGIN(void) { return FDCAN_SendData(&hfdcan2, TxMessage, 0x70, 1); }
+uint8_t RESERVED1_BEGIN(void) { return 0; /*FDCAN_SendData(&hfdcan2, TxMessage, 0x60, 1);*/ }
+uint8_t RESERVED2_BEGIN(void) { return 0; /*FDCAN_SendData(&hfdcan2, TxMessage, 0x70, 1);*/ }
+uint8_t FORCE_INTERRUPT(void) { return FDCAN_SendData(&hfdcan2, TxMessage, 0x90, 1);}

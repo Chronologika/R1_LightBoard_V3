@@ -53,7 +53,7 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+void Peripherals_Init(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -100,16 +100,7 @@ int main(void)
   MX_TIM6_Init();
   MX_TIM7_Init();
   /* USER CODE BEGIN 2 */
-//	FDCAN1_Init(&hfdcan1);
-  Button_Init();
-	FDCAN2_Init(&hfdcan2);
-	FDCAN3_Init(&hfdcan3);
-	__HAL_TIM_DISABLE_IT(&htim2, TIM_IT_UPDATE);
-	__HAL_TIM_DISABLE_IT(&htim2, TIM_IT_CC1);
-  __HAL_TIM_DISABLE_IT(&htim5, TIM_IT_UPDATE);
-	__HAL_TIM_DISABLE_IT(&htim5, TIM_IT_CC1);
-	HAL_TIM_Base_Start_IT(&htim6);
-	HAL_TIM_Base_Start_IT(&htim7);
+  Peripherals_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -205,6 +196,26 @@ void HAL_FDCAN_RxFifo1Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo1ITs)
 		HAL_FDCAN_GetRxMessage(&hfdcan3, FDCAN_RX_FIFO1, &CAN3_RxMessage, CAN3_RxData);
     Refresh_HeartBeat_Time(&hfdcan3);
 	}
+}
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  if (GPIO_Pin == GPIO_PIN_13)
+  {
+    FORCE_INTERRUPT();
+  }
+}
+void Peripherals_Init(void)
+{
+  //	FDCAN1_Init(&hfdcan1);
+  Button_Init();
+	FDCAN2_Init(&hfdcan2);
+	FDCAN3_Init(&hfdcan3);
+	__HAL_TIM_DISABLE_IT(&htim2, TIM_IT_UPDATE);
+	__HAL_TIM_DISABLE_IT(&htim2, TIM_IT_CC1);
+  __HAL_TIM_DISABLE_IT(&htim5, TIM_IT_UPDATE);
+	__HAL_TIM_DISABLE_IT(&htim5, TIM_IT_CC1);
+	HAL_TIM_Base_Start_IT(&htim6);
+	HAL_TIM_Base_Start_IT(&htim7);
 }
 /* USER CODE END 4 */
 

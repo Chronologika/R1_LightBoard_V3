@@ -33,6 +33,7 @@ void WS2812_Append_Reset(void)
 {
     for (int i = 0; i < 50; i++)
         Send_Buffer[LED_number * 24 + i] = 0;
+    WS2812_Set_Single_Color(0, 0, 0, 0, 0.0);
 }
 
 void WS2812_NewRound_Send(TIM_HandleTypeDef *htim, uint32_t TIM_CHANNEL)
@@ -57,6 +58,15 @@ static void Set_LED_Group_Color(const uint8_t *leds, uint8_t count, ColorName_t 
 
 void WS2812_DisPlay_HeartBeat_Error(void)
 {
+    float brightness = 0;
+    if (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_14) == GPIO_PIN_SET)
+    {
+        brightness = 0.07;
+    }
+    else if (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_14) == GPIO_PIN_RESET)
+    {
+        brightness = 0.5;
+    }
     HeartBeat_Display = 1;
     for (uint8_t j = 0; j < 4; j++)
     {
@@ -96,12 +106,21 @@ void WS2812_DisPlay_HeartBeat_Error(void)
         else
             color = COLOR_GREEN;
 
-        Set_LED_Group_Color(configs[i].leds, configs[i].count, color, 0.1);
+        Set_LED_Group_Color(configs[i].leds, configs[i].count, color, brightness);
     }
 }
 
 void WS2812_Display_Now_Event(void)
 {
+    float brightness = 0;
+    if (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_14) == GPIO_PIN_SET)
+    {
+        brightness = 0.07;
+    }
+    else if (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_14) == GPIO_PIN_RESET)
+    {
+        brightness = 0.5;
+    }
     int8_t Now_Event = -1;
     for (uint8_t i = 0; i < 4; i++)
     {
@@ -125,7 +144,7 @@ void WS2812_Display_Now_Event(void)
     case 0:
         if (USER_sysTick - Last_SelfTest_LED_Refresh_Time > 1000/SelfTest_LED_Hz)
         {
-        WS2812_Set_Single_Color(flowing_index, Color_Table[COLOR_GREEN].R, Color_Table[COLOR_GREEN].G, Color_Table[COLOR_GREEN].B, 0.1);
+        WS2812_Set_Single_Color(flowing_index, Color_Table[COLOR_GREEN].R, Color_Table[COLOR_GREEN].G, Color_Table[COLOR_GREEN].B, brightness);
         flowing_index += flowing_direction;
         if (flowing_index == LED_number || flowing_index == 1)
             flowing_direction = -flowing_direction;
@@ -137,7 +156,7 @@ void WS2812_Display_Now_Event(void)
         if (USER_sysTick - Last_Skill_LED_Refresh_Time > 1000/Skill_LED_Hz)
         {
         for (uint8_t i = flowing_col_index; i <= LED_number; i += 6)
-            WS2812_Set_Single_Color(i, Color_Table[COLOR_BLUE].R, Color_Table[COLOR_BLUE].G, Color_Table[COLOR_BLUE].B, 0.1);
+            WS2812_Set_Single_Color(i, Color_Table[COLOR_BLUE].R, Color_Table[COLOR_BLUE].G, Color_Table[COLOR_BLUE].B, brightness);
         flowing_col_index += flowing_col_direction;
         if (flowing_col_index == LED_COLS || flowing_col_index == 1)
             flowing_col_direction = -flowing_col_direction;
@@ -152,7 +171,7 @@ void WS2812_Display_Now_Event(void)
         uint16_t threshold = Now_Event == 2 ? 512 : 256;
         ColorName_t color = ((USER_sysTick & mask) > threshold) ? (Now_Event == 2 ? COLOR_GREEN : COLOR_RED) : COLOR_BLACK;
         for (int i = 1; i <= LED_number; i++)
-            WS2812_Set_Single_Color(i, Color_Table[color].R, Color_Table[color].G, Color_Table[color].B, 0.1);
+            WS2812_Set_Single_Color(i, Color_Table[color].R, Color_Table[color].G, Color_Table[color].B, brightness);
         break;
     }
     default:

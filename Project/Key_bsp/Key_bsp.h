@@ -46,5 +46,6 @@ uint8_t SELF_TEST_BEGIN(void);
 uint8_t CHALLENGE_BEGIN(void);
 uint8_t RESERVED1_BEGIN(void);
 uint8_t RESERVED2_BEGIN(void);
+uint8_t FORCE_INTERRUPT(void);
 
 #endif
