@@ -201,7 +201,14 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
   if (GPIO_Pin == GPIO_PIN_13)
   {
-    FORCE_INTERRUPT();
+		if (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_13) == GPIO_PIN_SET)
+		{
+			FORCE_INTERRUPT();
+		}
+		else if (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_13) == GPIO_PIN_RESET)
+		{
+			INTERRUPT_RESET();
+		}
   }
 }
 void Peripherals_Init(void)

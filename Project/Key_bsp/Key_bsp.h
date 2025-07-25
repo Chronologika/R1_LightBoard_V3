@@ -47,5 +47,6 @@ uint8_t CHALLENGE_BEGIN(void);
 uint8_t RESERVED1_BEGIN(void);
 uint8_t RESERVED2_BEGIN(void);
 uint8_t FORCE_INTERRUPT(void);
+uint8_t INTERRUPT_RESET(void);
 
 #endif

@@ -153,3 +153,4 @@ uint8_t CHALLENGE_BEGIN(void) { return FDCAN_SendData(&hfdcan2, TxMessage, 0x50,
 uint8_t RESERVED1_BEGIN(void) { return 0; /*FDCAN_SendData(&hfdcan2, TxMessage, 0x60, 1);*/ }
 uint8_t RESERVED2_BEGIN(void) { return 0; /*FDCAN_SendData(&hfdcan2, TxMessage, 0x70, 1);*/ }
 uint8_t FORCE_INTERRUPT(void) { return FDCAN_SendData(&hfdcan2, TxMessage, 0x90, 1);}
+uint8_t INTERRUPT_RESET(void) {	return FDCAN_SendData(&hfdcan2, TxMessage, 0x100, 1);}
