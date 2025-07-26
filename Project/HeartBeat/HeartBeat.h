@@ -10,6 +10,7 @@ extern uint64_t Last_HeartBeat_Time[DEVICE_NUM];
 extern uint8_t HeartBeat_Error_Flags;
 extern uint8_t Event_Flag[4];
 extern uint8_t HeartBeat_Display;
+extern uint8_t SYSTEM_INTERRUPT_FLAG;
 
 void Check_HeartBeat_Timeout(void);
 void Refresh_HeartBeat_Time(FDCAN_HandleTypeDef *hfdcan);

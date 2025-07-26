@@ -107,6 +107,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+		if (SYSTEM_INTERRUPT_FLAG == 1)
+			continue;
 		Button_Function_Execute();
     HAL_Delay(1);
     /* USER CODE END WHILE */
@@ -170,6 +172,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   }
   else if (htim->Instance == TIM6)
   {
+		if (SYSTEM_INTERRUPT_FLAG == 1)
+			return;
     Check_HeartBeat_Timeout();
     WS2812_Display_Now_Event();
     WS2812_DisPlay_HeartBeat_Error();
@@ -204,10 +208,12 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		if (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_13) == GPIO_PIN_SET)
 		{
 			FORCE_INTERRUPT();
+			SYSTEM_INTERRUPT_FLAG = 1;
 		}
 		else if (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_13) == GPIO_PIN_RESET)
 		{
 			INTERRUPT_RESET();
+			SYSTEM_INTERRUPT_FLAG = 0;
 		}
   }
 }

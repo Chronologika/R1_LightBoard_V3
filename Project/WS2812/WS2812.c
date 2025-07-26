@@ -33,7 +33,8 @@ void WS2812_Append_Reset(void)
 {
     for (int i = 0; i < 50; i++)
         Send_Buffer[LED_number * 24 + i] = 0;
-    WS2812_Set_Single_Color(0, 0, 0, 0, 0.0);
+		for (int i = 0; i <= 23; i++)
+        Send_Buffer[i] = 0;
 }
 
 void WS2812_NewRound_Send(TIM_HandleTypeDef *htim, uint32_t TIM_CHANNEL)

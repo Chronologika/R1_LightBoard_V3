@@ -3,7 +3,7 @@
 <title>Static Call Graph - [R1_LightBoard_V3\R1_LightBoard_V3.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image R1_LightBoard_V3\R1_LightBoard_V3.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Fri Jul 25 17:28:19 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Sat Jul 26 21:43:41 2025
 <BR><P>
 <H3>Maximum Stack Usage =        360 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1020,7 +1020,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FDCAN_IRQHandler
 </UL>
 
-<P><STRONG><a name="[bc]"></a>HAL_GPIO_EXTI_Callback</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, main.o(.text.HAL_GPIO_EXTI_Callback))
+<P><STRONG><a name="[bc]"></a>HAL_GPIO_EXTI_Callback</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, main.o(.text.HAL_GPIO_EXTI_Callback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
 <LI>Call Chain = HAL_GPIO_EXTI_Callback &rArr; INTERRUPT_RESET &rArr; FDCAN_SendData &rArr; HAL_FDCAN_AddMessageToTxFifoQ &rArr; FDCAN_CopyMessageToRAM
 </UL>
@@ -1410,7 +1410,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WS2812_NewRound_Send
 </UL>
 
-<P><STRONG><a name="[dd]"></a>HAL_TIM_PeriodElapsedCallback</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, main.o(.text.HAL_TIM_PeriodElapsedCallback))
+<P><STRONG><a name="[dd]"></a>HAL_TIM_PeriodElapsedCallback</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, main.o(.text.HAL_TIM_PeriodElapsedCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = HAL_TIM_PeriodElapsedCallback &rArr; WS2812_NewRound_Send &rArr; HAL_TIM_PWM_Start_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WS2812_NewRound_Send
@@ -1771,10 +1771,8 @@ Global Symbols
 <P><STRONG><a name="[5]"></a>UsageFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32g4xx_it.o(.text.UsageFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32g474xx.o(RESET)
 </UL>
-<P><STRONG><a name="[119]"></a>WS2812_Append_Reset</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, ws2812.o(.text.WS2812_Append_Reset))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = WS2812_Append_Reset &rArr; WS2812_Set_Single_Color
-</UL>
-<BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WS2812_Set_Single_Color
+<P><STRONG><a name="[119]"></a>WS2812_Append_Reset</STRONG> (Thumb, 90 bytes, Stack size 8 bytes, ws2812.o(.text.WS2812_Append_Reset))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = WS2812_Append_Reset
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WS2812_NewRound_Send
 </UL>
@@ -1812,11 +1810,10 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WS2812_Display_Now_Event
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_Function_Execute
-<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WS2812_Append_Reset
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_LED_Group_Color
 </UL>
 
-<P><STRONG><a name="[85]"></a>main</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, main.o(.text.main))
+<P><STRONG><a name="[85]"></a>main</STRONG> (Thumb, 92 bytes, Stack size 16 bytes, main.o(.text.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 360 + Unknown Stack Size
 <LI>Call Chain = main &rArr; MX_FDCAN3_Init &rArr; HAL_FDCAN_Init &rArr; HAL_FDCAN_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_EncodePriority
 </UL>

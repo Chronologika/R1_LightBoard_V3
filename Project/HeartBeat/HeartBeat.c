@@ -1,5 +1,6 @@
 #include "HeartBeat.h"
 
+uint8_t SYSTEM_INTERRUPT_FLAG = 0;
 uint64_t Last_HeartBeat_Time[DEVICE_NUM] = {0};
 uint64_t Last_Status_Switch_Time = 0;
 uint8_t Event_Flag[4] = {0};
