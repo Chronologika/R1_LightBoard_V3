@@ -5,6 +5,7 @@
 
 #define BTN_COUNT 6
 #define BTN_DEBOUNCE_MS 5
+#define DEBOUNCE_DELAY 50
 
 typedef enum
 {
@@ -35,6 +36,7 @@ typedef struct
 } Button;
 
 extern Button buttons[BTN_COUNT];
+extern uint64_t last_interrupt_time;
 
 uint8_t Button_GetState(ButtonID id);
 void Button_Init(void);

@@ -2,6 +2,7 @@
 
 Button buttons[BTN_COUNT];
 uint8_t TxMessage[1] = {0x01};
+uint64_t last_interrupt_time = 0;
 
 uint8_t Button_GetState(ButtonID id)
 {
@@ -152,5 +153,6 @@ uint8_t SELF_TEST_BEGIN(void) { return FDCAN_SendData(&hfdcan2, TxMessage, 0x40,
 uint8_t CHALLENGE_BEGIN(void) { return FDCAN_SendData(&hfdcan2, TxMessage, 0x50, 1); }
 uint8_t RESERVED1_BEGIN(void) { return 0; /*FDCAN_SendData(&hfdcan2, TxMessage, 0x60, 1);*/ }
 uint8_t RESERVED2_BEGIN(void) { return 0; /*FDCAN_SendData(&hfdcan2, TxMessage, 0x70, 1);*/ }
-uint8_t FORCE_INTERRUPT(void) { return FDCAN_SendData(&hfdcan2, TxMessage, 0x90, 1);}
+uint8_t FORCE_INTERRUPT(void) { for (uint8_t i = 0; i <= 3; i++){Event_Flag[i] = 0;}
+																return FDCAN_SendData(&hfdcan2, TxMessage, 0x90, 1);}
 uint8_t INTERRUPT_RESET(void) {	return FDCAN_SendData(&hfdcan2, TxMessage, 0x100, 1);}

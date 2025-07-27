@@ -203,19 +203,24 @@ void HAL_FDCAN_RxFifo1Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo1ITs)
 }
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-  if (GPIO_Pin == GPIO_PIN_13)
-  {
-		if (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_13) == GPIO_PIN_SET)
-		{
-			FORCE_INTERRUPT();
-			SYSTEM_INTERRUPT_FLAG = 1;
-		}
-		else if (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_13) == GPIO_PIN_RESET)
-		{
-			INTERRUPT_RESET();
-			SYSTEM_INTERRUPT_FLAG = 0;
-		}
-  }
+    if (GPIO_Pin == GPIO_PIN_13)
+    {
+        uint32_t current_time = HAL_GetTick();
+        if (current_time - last_interrupt_time > DEBOUNCE_DELAY)
+        {
+            last_interrupt_time = current_time;
+            if (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_13) == GPIO_PIN_RESET)
+            {
+                FORCE_INTERRUPT();
+                SYSTEM_INTERRUPT_FLAG = 1;
+            }
+            else if (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_13) == GPIO_PIN_SET)
+            {
+                INTERRUPT_RESET();
+                SYSTEM_INTERRUPT_FLAG = 0;
+            }
+        }
+    }
 }
 void Peripherals_Init(void)
 {

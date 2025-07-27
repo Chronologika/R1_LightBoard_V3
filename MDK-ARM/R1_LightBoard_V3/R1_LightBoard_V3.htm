@@ -3,7 +3,7 @@
 <title>Static Call Graph - [R1_LightBoard_V3\R1_LightBoard_V3.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image R1_LightBoard_V3\R1_LightBoard_V3.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Sat Jul 26 21:43:41 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Sun Jul 27 16:01:40 2025
 <BR><P>
 <H3>Maximum Stack Usage =        360 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -701,8 +701,8 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32g474xx.o(RESET)
 </UL>
 <P><STRONG><a name="[32]"></a>EXTI15_10_IRQHandler</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, stm32g4xx_it.o(.text.EXTI15_10_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 184 + Unknown Stack Size
-<LI>Call Chain = EXTI15_10_IRQHandler &rArr; HAL_GPIO_EXTI_IRQHandler &rArr; HAL_GPIO_EXTI_Callback &rArr; INTERRUPT_RESET &rArr; FDCAN_SendData &rArr; HAL_FDCAN_AddMessageToTxFifoQ &rArr; FDCAN_CopyMessageToRAM
+<BR><BR>[Stack]<UL><LI>Max Depth = 192 + Unknown Stack Size
+<LI>Call Chain = EXTI15_10_IRQHandler &rArr; HAL_GPIO_EXTI_IRQHandler &rArr; HAL_GPIO_EXTI_Callback &rArr; FORCE_INTERRUPT &rArr; FDCAN_SendData &rArr; HAL_FDCAN_AddMessageToTxFifoQ &rArr; FDCAN_CopyMessageToRAM
 </UL>
 <BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_IRQHandler
 </UL>
@@ -808,8 +808,8 @@ Global Symbols
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OFFENSIVE_RESET
 </UL>
 
-<P><STRONG><a name="[9f]"></a>FORCE_INTERRUPT</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, key_bsp.o(.text.FORCE_INTERRUPT))
-<BR><BR>[Stack]<UL><LI>Max Depth = 144 + Unknown Stack Size
+<P><STRONG><a name="[9f]"></a>FORCE_INTERRUPT</STRONG> (Thumb, 80 bytes, Stack size 16 bytes, key_bsp.o(.text.FORCE_INTERRUPT))
+<BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
 <LI>Call Chain = FORCE_INTERRUPT &rArr; FDCAN_SendData &rArr; HAL_FDCAN_AddMessageToTxFifoQ &rArr; FDCAN_CopyMessageToRAM
 </UL>
 <BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FDCAN_SendData
@@ -936,9 +936,9 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 328 + Unknown Stack Size
 <LI>Call Chain = HAL_FDCAN_Init &rArr; HAL_FDCAN_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_EncodePriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FDCAN_CalcultateRamBlockAddresses
+<BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FDCAN_CalcultateRamBlockAddresses
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FDCAN_MspInit
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
 <BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_FDCAN3_Init
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_FDCAN2_Init
@@ -1020,20 +1020,21 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FDCAN_IRQHandler
 </UL>
 
-<P><STRONG><a name="[bc]"></a>HAL_GPIO_EXTI_Callback</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, main.o(.text.HAL_GPIO_EXTI_Callback))
-<BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
-<LI>Call Chain = HAL_GPIO_EXTI_Callback &rArr; INTERRUPT_RESET &rArr; FDCAN_SendData &rArr; HAL_FDCAN_AddMessageToTxFifoQ &rArr; FDCAN_CopyMessageToRAM
+<P><STRONG><a name="[bc]"></a>HAL_GPIO_EXTI_Callback</STRONG> (Thumb, 162 bytes, Stack size 16 bytes, main.o(.text.HAL_GPIO_EXTI_Callback))
+<BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
+<LI>Call Chain = HAL_GPIO_EXTI_Callback &rArr; FORCE_INTERRUPT &rArr; FDCAN_SendData &rArr; HAL_FDCAN_AddMessageToTxFifoQ &rArr; FDCAN_CopyMessageToRAM
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INTERRUPT_RESET
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FORCE_INTERRUPT
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
 <BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_IRQHandler
 </UL>
 
 <P><STRONG><a name="[94]"></a>HAL_GPIO_EXTI_IRQHandler</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, stm32g4xx_hal_gpio.o(.text.HAL_GPIO_EXTI_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 176 + Unknown Stack Size
-<LI>Call Chain = HAL_GPIO_EXTI_IRQHandler &rArr; HAL_GPIO_EXTI_Callback &rArr; INTERRUPT_RESET &rArr; FDCAN_SendData &rArr; HAL_FDCAN_AddMessageToTxFifoQ &rArr; FDCAN_CopyMessageToRAM
+<BR><BR>[Stack]<UL><LI>Max Depth = 184 + Unknown Stack Size
+<LI>Call Chain = HAL_GPIO_EXTI_IRQHandler &rArr; HAL_GPIO_EXTI_Callback &rArr; FORCE_INTERRUPT &rArr; FDCAN_SendData &rArr; HAL_FDCAN_AddMessageToTxFifoQ &rArr; FDCAN_CopyMessageToRAM
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_Callback
 </UL>
@@ -1062,6 +1063,7 @@ Global Symbols
 <P><STRONG><a name="[a6]"></a>HAL_GetTick</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32g4xx_hal.o(.text.HAL_GetTick))
 <BR><BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCCEx_PeriphCLKConfig
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FDCAN_Init
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_Callback
 <LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
